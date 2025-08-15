@@ -35,8 +35,7 @@ updateDisplay();
 // -------------------------------------------------------------------
 let total = document.getElementById('total');
 let totalPrice = 0;
-
-// 
+let totalItems = [];
 
 fetch('./menu.json')
     .then(response => response.json())
@@ -62,6 +61,7 @@ fetch('./menu.json')
                 if (current > 0) {
                     input.value = current - 1;
                     totalPrice -= 8;
+                    totalItems.push(data.menuItems[i].id);
                     updateTotal();
                 }
             });
@@ -79,5 +79,6 @@ fetch('./menu.json')
     .catch(error => console.error('Error fetching JSON:', error));
 
     function updateTotal() {
-        total.textContent = `Total: $${totalPrice}`
+        total.textContent = `Total: $${totalPrice}`;
+        console.log(totalItems);
     }
