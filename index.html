@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chabad School Lunches</title>
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="./styles-mobile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,18 +21,27 @@
     </div>
 
     <div class="main-container">
+
         <div class="container-header">
             <h2>Hot Lunch Order</h2>
         </div>
+
         <div class="choose-week">
-            <span class="nav-buttons" id="prevWeek">&#8592;</span>
             <span id="weekRange"></span>
-            <span class="nav-buttons" id="nextWeek">&#8594;</span>
         </div>
+
         <div class="days" id="days"></div>
+
+        <div class="specific-requests">
+            <label for="requests" rows="2">Special requests</label>
+            <textarea name="requests" id="requests"></textarea>
+        </div>
+
         <div class="totalPrice">
             <h3 id="total">Total: $0</h3>
+            <button class="order-btn">Order Now</button>
         </div>
+
     </div>
 
 

@@ -20,21 +20,23 @@ function updateDisplay() {
     document.getElementById('weekRange').textContent = getWeekMondayAndFriday(currentDate);
 }
 
-// Button events
-document.getElementById('prevWeek').addEventListener('click', () => {
-    currentDate.setDate(currentDate.getDate() - 7);
-    updateDisplay();
-});
-document.getElementById('nextWeek').addEventListener('click', () => {
-    currentDate.setDate(currentDate.getDate() + 7);
-    updateDisplay();
-});
+// // Button events
+// document.getElementById('prevWeek').addEventListener('click', () => {
+//     currentDate.setDate(currentDate.getDate() - 7);
+//     updateDisplay();
+// });
+// document.getElementById('nextWeek').addEventListener('click', () => {
+//     currentDate.setDate(currentDate.getDate() + 7);
+//     updateDisplay();
+// });
 
 // Initial display
 updateDisplay();
 // -------------------------------------------------------------------
 let total = document.getElementById('total');
 let totalPrice = 0;
+
+// 
 
 fetch('./menu.json')
     .then(response => response.json())
