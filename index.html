@@ -32,6 +32,11 @@
 
         <div class="days" id="days"></div>
 
+        <div class="name">
+            <label for="name">Enter name</label>
+            <input type="text" name="name" id="name">
+        </div>
+
         <div class="specific-requests">
             <label for="requests" rows="2">Special requests</label>
             <textarea name="requests" id="requests"></textarea>
@@ -46,6 +51,16 @@
 
 
     <script type="module" src="./script.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "K4sVp1R5giOA_vyxm",
+            });
+        })();
+    </script>
 </body>
 
 </html>

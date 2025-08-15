@@ -107,6 +107,21 @@ body {
     margin: 0 0 0 40px;
 }
 
+.name {
+    align-items: center;
+}
+
+.name label {
+    margin-right: 20px;
+}
+
+#name {
+    border-radius: 5px;
+    outline: none;
+    border: solid black 2px;
+    background-color: whitesmoke;
+}
+
 .specific-requests {
     flex-direction: column;
 }

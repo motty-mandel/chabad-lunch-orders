@@ -1,7 +1,7 @@
-let currentDate = new Date(); // Tracks which week we're on
+let currentDate = new Date();
 
 function getWeekMondayAndFriday(baseDate) {
-    const day = baseDate.getDay(); // Sunday=0, Monday=1
+    const day = baseDate.getDay();
     const diffToMonday = (day === 0 ? -6 : 1) - day;
     const monday = new Date(baseDate);
     monday.setDate(baseDate.getDate() + diffToMonday);
@@ -61,7 +61,15 @@ fetch('./menu.json')
                 if (current > 0) {
                     input.value = current - 1;
                     totalPrice -= 8;
-                    totalItems.push(data.menuItems[i].id);
+
+                    let existing = totalItems.find(x => x.id === item.id);
+                    if (existing) {
+                        existing.qty--;
+                        if (existing.qty <= 0) {
+                            totalItems = totalItems.filter(x => x.id !== item.id);
+                        }
+                    }
+
                     updateTotal();
                 }
             });
@@ -70,15 +78,48 @@ fetch('./menu.json')
                 let current = parseInt(input.value) || 0;
                 input.value = current + 1;
                 totalPrice += 8;
+
+                let existing = totalItems.find(x => x.id === item.id);
+                if (existing) {
+                    existing.qty++;
+                } else {
+                    totalItems.push({
+                        id: item.id,
+                        name: item.foodItems,
+                        qty: 1
+                    });
+                }
+
                 updateTotal();
             });
 
             days.appendChild(block);
         });
     })
-    .catch(error => console.error('Error fetching JSON:', error));
+.catch(error => console.error('Error fetching JSON:', error));
 
-    function updateTotal() {
-        total.textContent = `Total: $${totalPrice}`;
-        console.log(totalItems);
+let itemsText = "";
+
+function updateTotal() {
+    itemsText = totalItems.map(item => `${item.name} (x${item.qty})`).join(', ');
+    total.textContent = `Total: $${totalPrice}`;
+}
+// -----------------------------------
+const orderBtn = document.querySelector('.order-btn');
+const customerName = document.getElementById('name');
+
+orderBtn.addEventListener('click', () => {
+    if (customerName.value === "") {
+        alert("Please fill out name!")
+    } else {
+        emailjs.send("service_bgkimz8", "template_j0k8d1e", {
+            customer_name: customerName.value,
+            order_details: itemsText
+        })
+        .then((response) => {
+            alert("Order sent successfully!");
+        }, (error) => {
+            alert("Failed to send order.", error);
+        });
     }
+})
