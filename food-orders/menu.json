@@ -1,0 +1,29 @@
+{
+    "menuItems": [
+        {
+            "day": "Monday",
+            "foodItems": "Chicken with israeli Couscous",
+            "price": "$8"
+        },
+        {
+            "day": "Tuesday",
+            "foodItems": "Beef meatball with rice",
+            "price": "$8"
+        },
+        {
+            "day": "Wednesday",
+            "foodItems": "Hamburger",
+            "price": "$8"
+        },
+        {
+            "day": "Thursday",
+            "foodItems": "Chicken nuggets with fries",
+            "price": "$8"
+        },
+        {
+            "day": "Friday",
+            "foodItems": "Pasta with red sauce and shnitzel",
+            "price": "$8"
+        }
+    ]
+}

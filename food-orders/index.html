@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles-mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Grey+Qo&family=Orbitron:wght@600&family=Varela+Round&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Yummy Kosher Grill</h1>
+    </div>
+
+    <div class="main-container">
+        <div class="container-header">
+            <h2>Hot Lunch Order</h2>
+        </div>
+        <div class="choose-week">
+            <span class="nav-buttons" id="prevWeek">&#8592;</span>
+            <span id="weekRange"></span>
+            <span class="nav-buttons" id="nextWeek">&#8594;</span>
+        </div>
+        <div class="days" id="days"></div>
+        <div class="totalPrice">
+            <h3 id="total">Total: $0</h3>
+        </div>
+    </div>
+
+
+    <script type="module" src="./script.js"></script>
+</body>
+
+</html>
