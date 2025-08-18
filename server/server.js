@@ -2,10 +2,10 @@ require('dotenv').config();
 const express = require('express');
 const Stripe = require('stripe');
 const app = express();
-const stripe = Stripe(process.env.TEST_KEY);
+const stripe = Stripe(process.env.SECRET_KEY);
 
 const cors = require('cors');
-app.use(cors({ origin:[ 'https://motty-mandel.github.io', 'https://motty-mandel.github.io/chabad-lunch-orders/' ]}));
+app.use(cors({ origin:[ 'https://motty-mandel.github.io', 'https://motty-mandel.github.io/chabad-lunch-orders/', 'http://127.0.0.1:5501' ]}));
 app.use(express.json());
 
 app.post('/create-checkout-session', async (req, res) => {
@@ -38,6 +38,5 @@ app.post('/create-checkout-session', async (req, res) => {
     res.status(500).json({ error: err.message });  // 👈 still JSON on error
   }
 });
-
 
 app.listen(4242, () => console.log('Server running on port 4242'));

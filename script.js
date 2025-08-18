@@ -111,42 +111,7 @@ orderBtn.addEventListener('click', () => {
     })
         .then(res => res.json())
         .then(data => {
-            window.location.href = data.url; // Redirect to Stripe Checkout
+            window.location.href = data.url;
         })
         .catch(err => console.error("Error:", err));
 });
-
-// -----------------------------------
-// const orderBtn = document.querySelector('.order-btn');
-// const customerName = document.getElementById('name');
-// const customerEmail = document.getElementById('email');
-// const requests = document.getElementById('requests');
-
-// orderBtn.addEventListener('click', () => {
-//     if (customerName.value === "" || customerEmail.value === "") {
-//         alert("Make sure name and email are filled out!")
-//     } else
-//         if (requests.value !== "") {
-//         emailjs.send("service_bgkimz8", "template_j0k8d1e", {
-//             customer_name: customerName.value,
-//             customer_email: customerEmail.value,
-//             order_details: itemsText,
-//             special_requests: requests.value
-//         })
-//             .then((response) => {
-//                 alert("Order sent successfully!");
-//             }, (error) => {
-//                 alert("Failed to send order.", error);
-//             });
-//     } else {
-//         emailjs.send("service_bgkimz8", "template_j0k8d1e", {
-//             customer_name: customerName.value,
-//             order_details: itemsText
-//         })
-//             .then((response) => {
-//                 alert("Order sent successfully!");
-//             }, (error) => {
-//                 alert("Failed to send order.", error);
-//             });
-//     }
-// })
