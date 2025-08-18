@@ -17,6 +17,7 @@
 <body>
 
     <div class="header">
+        <img src="./grill-logo.webp" alt="yummy-kosher-grill-logo" height="50px">
         <h1>Yummy Kosher Grill</h1>
     </div>
 
@@ -28,14 +29,17 @@
 
         <div class="choose-week">
             <span id="weekRange"></span>
+            <p>Order between 2:30pm to 8:30am</p>
         </div>
 
         <div class="days" id="days"></div>
 
-        <div class="name">
+        <!-- <div class="name">
             <label for="name">Enter name</label>
             <input type="text" name="name" id="name">
-        </div>
+            <label for="email">Enter email</label>
+            <input type="text" name="email" id="email">
+        </div> -->
 
         <div class="specific-requests">
             <label for="requests" rows="2">Special requests</label>
@@ -51,6 +55,8 @@
 
 
     <script type="module" src="./script.js"></script>
+
+    <script src="https://js.stripe.com/basil/stripe.js"></script>
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>

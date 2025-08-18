@@ -1,4 +1,7 @@
 @media screen and (max-width: 430px) {
+    .header h1 {
+        font-size: 1.7em;
+    }
     .main-container {
         width: 90%;
         min-height: fit-content;
@@ -8,7 +11,8 @@
         font-size: 16px;
     }
 
-    #name {
+    #name,
+    #email {
         font-size: 16px;
     }
 }
