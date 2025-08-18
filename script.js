@@ -95,6 +95,27 @@ function updateTotal() {
     total.textContent = `Total: $${totalPrice}`;
     console.log(itemsText)
 }
+
+const orderBtn = document.querySelector('.order-btn');
+
+orderBtn.addEventListener('click', () => {
+    if (totalItems.length === 0) {
+        alert("Please add at least one item!");
+        return;
+    }
+
+    fetch('http://localhost:4242/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: totalItems })
+    })
+        .then(res => res.json())
+        .then(data => {
+            window.location.href = data.url; // Redirect to Stripe Checkout
+        })
+        .catch(err => console.error("Error:", err));
+});
+
 // -----------------------------------
 // const orderBtn = document.querySelector('.order-btn');
 // const customerName = document.getElementById('name');
@@ -104,7 +125,7 @@ function updateTotal() {
 // orderBtn.addEventListener('click', () => {
 //     if (customerName.value === "" || customerEmail.value === "") {
 //         alert("Make sure name and email are filled out!")
-//     } else 
+//     } else
 //         if (requests.value !== "") {
 //         emailjs.send("service_bgkimz8", "template_j0k8d1e", {
 //             customer_name: customerName.value,
