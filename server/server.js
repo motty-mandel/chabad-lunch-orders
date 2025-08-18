@@ -5,7 +5,7 @@ const app = express();
 const stripe = Stripe(process.env.TEST_KEY);
 
 const cors = require('cors');
-app.use(cors({ origin:[ 'http://127.0.0.1:5501', 'https://motty-mandel.github.io/chabad-lunch-orders/' ]}));
+app.use(cors({ origin:[ 'http://127.0.0.1:5501', 'https://motty-mandel.github.io/chabad-lunch-orders/', 'https://motty-mandel.github.io' ]}));
 app.use(express.json());
 
 app.post('/create-checkout-session', async (req, res) => {
