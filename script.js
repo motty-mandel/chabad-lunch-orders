@@ -104,7 +104,7 @@ orderBtn.addEventListener('click', () => {
         return;
     }
 
-    fetch('http://localhost:4242/create-checkout-session', {
+    fetch('https://chabad-lunch-orders.onrender.com/create-checkout-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ items: totalItems })
