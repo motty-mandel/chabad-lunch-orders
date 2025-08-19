@@ -93,25 +93,25 @@ let itemsText = "";
 function updateTotal() {
     itemsText = totalItems.map(item => `For ${item.day}: ${item.name} (x${item.qty})`).join(', ');
     total.textContent = `Total: $${totalPrice}`;
-    console.log(itemsText)
 }
+// -------------------------------------------------------
 
-const orderBtn = document.querySelector('.order-btn');
+document.querySelector('.order-btn').addEventListener('click', () => {
+  if (totalItems.length === 0) {
+    alert("Please add at least one item!");
+    return;
+  }
 
-orderBtn.addEventListener('click', () => {
-    if (totalItems.length === 0) {
-        alert("Please add at least one item!");
-        return;
-    }
+  const specialRequests = document.getElementById('requests').value.trim();
 
-    fetch('https://chabad-lunch-orders.onrender.com/create-checkout-session', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ items: totalItems })
-    })
-        .then(res => res.json())
-        .then(data => {
-            window.location.href = data.url;
-        })
-        .catch(err => console.error("Error:", err));
+  fetch('https://chabad-lunch-orders.onrender.com/create-checkout-session', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ items: totalItems, specialRequests })
+  })
+  .then(res => res.json())
+  .then(data => {
+    window.location.href = data.url; // redirect to Stripe Checkout
+  })
+  .catch(err => console.error("Error:", err));
 });
