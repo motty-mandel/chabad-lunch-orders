@@ -4,14 +4,13 @@ const Stripe = require('stripe');
 const cors = require('cors');
 const sendOrderEmail = require('./email');
 const app = express();
-const stripe = Stripe(process.env.MY_TEST_KEY);
+const stripe = Stripe(process.env.SECRET_KEY);
 
 app.use(cors());
 
 // Webhook to send email after successful payment
 app.post('/webhook', express.raw({ type: 'application/json' }), (req, res) => {
-  console.log('Webhook received:', req.body.toString()); // raw payload
-  const endpointSecret = process.env.MY_TEST_WEBHOOK;
+  const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
   let event;
 
   try {
