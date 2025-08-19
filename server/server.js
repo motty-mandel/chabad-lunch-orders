@@ -57,8 +57,8 @@ app.post('/create-checkout-session', async (req, res) => {
         },
         quantity: item.qty,
       })),
-      success_url: 'http://127.0.0.1:5501/index.html',
-      cancel_url: 'http://127.0.0.1:5501/index.html',
+      success_url: 'https://motty-mandel.github.io/chabad-lunch-orders/',
+      cancel_url: 'https://motty-mandel.github.io/chabad-lunch-orders/',
       billing_address_collection: 'required',
       metadata: {
         items: JSON.stringify(items),
