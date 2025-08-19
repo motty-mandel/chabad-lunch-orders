@@ -111,7 +111,7 @@ document.querySelector('.order-btn').addEventListener('click', () => {
   })
   .then(res => res.json())
   .then(data => {
-    window.location.href = data.url; // redirect to Stripe Checkout
+    window.location.href = data.url;
   })
   .catch(err => console.error("Error:", err));
 });

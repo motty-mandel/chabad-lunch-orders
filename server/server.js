@@ -3,12 +3,14 @@ const express = require('express');
 const Stripe = require('stripe');
 const cors = require('cors');
 const sendOrderEmail = require('./email');
-
 const app = express();
 const stripe = Stripe(process.env.MY_TEST_KEY);
 
+app.use(cors());
+
 // Webhook to send email after successful payment
 app.post('/webhook', express.raw({ type: 'application/json' }), (req, res) => {
+  console.log('Webhook received:', req.body.toString()); // raw payload
   const endpointSecret = process.env.MY_TEST_WEBHOOK;
   let event;
 
@@ -21,7 +23,6 @@ app.post('/webhook', express.raw({ type: 'application/json' }), (req, res) => {
 
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object;
-
     const orderInfo = {
       customerName: session.customer_details.name,
       customerEmail: session.customer_details.email,
@@ -38,7 +39,7 @@ app.post('/webhook', express.raw({ type: 'application/json' }), (req, res) => {
   res.status(200).end();
 });
 
-app.use(cors());
+
 app.use(express.json());
 
 // Create Checkout session
