@@ -27,10 +27,12 @@ body {
 .main-container {
     height: fit-content;
     width: 40%;
-    background-color: white;
+    background-color: whitesmoke;
     border-radius: 30px;
     padding: 20px;
     margin-bottom: 50px;
+    box-shadow: -0.3em -0.3em 0.5em #ffffff,
+        0.3em 0.3em 0.5em #d1cdc7;
 }
 
 .main-container div {

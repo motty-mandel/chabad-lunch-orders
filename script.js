@@ -1,4 +1,18 @@
 let currentDate = new Date();
+const currentDay = currentDate.toLocaleString('en-US', { weekday: 'long' });
+
+const daysMap = {
+    Sunday: 0,
+    Monday: 1,
+    Tuesday: 2,
+    Wednesday: 3,
+    Thursday: 4,
+    Friday: 5,
+    Saturday: 6
+};
+
+let currentDayNum = daysMap[currentDay];
+
 
 function getWeekMondayAndFriday(baseDate) {
     const day = baseDate.getDay();
@@ -97,21 +111,31 @@ function updateTotal() {
 // -------------------------------------------------------
 
 document.querySelector('.order-btn').addEventListener('click', () => {
-  if (totalItems.length === 0) {
-    alert("Please add at least one item!");
-    return;
-  }
+    if (totalItems.length === 0) {
+        alert("Please add at least one item!");
+        return;
+    }
 
-  const specialRequests = document.getElementById('requests').value.trim();
+    const conflict = totalItems.some(order => {
+        let orderDayNum = daysMap[order.day.trim()];
+        return orderDayNum < currentDayNum;
+    });
 
-  fetch('https://chabad-lunch-orders.onrender.com/create-checkout-session', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ items: totalItems, specialRequests })
-  })
-  .then(res => res.json())
-  .then(data => {
-    window.location.href = data.url;
-  })
-  .catch(err => console.error("Error:", err));
+    if (conflict) {
+        alert("At least one of the orders is for a day that's already gone!");
+        return;
+    }
+
+    const specialRequests = document.getElementById('requests').value.trim();
+
+    fetch('https://chabad-lunch-orders.onrender.com/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: totalItems, specialRequests })
+    })
+        .then(res => res.json())
+        .then(data => {
+            window.location.href = data.url;
+        })
+        .catch(err => console.error("Error:", err));
 });
