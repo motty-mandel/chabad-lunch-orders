@@ -26,7 +26,7 @@ body {
 
 .main-container {
     height: fit-content;
-    width: 40%;
+    width: 35%;
     background-color: whitesmoke;
     border-radius: 30px;
     padding: 20px;
@@ -41,7 +41,6 @@ body {
 }
 
 .choose-week {
-    display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1.2rem;
@@ -161,6 +160,8 @@ body {
     border: none;
     background-color: rgb(62, 146, 255);
     color: white;
+    line-height: 1rem;
+    font-size: large;
 }
 
 .totalPrice button:active {

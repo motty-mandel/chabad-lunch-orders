@@ -1,5 +1,6 @@
 let currentDate = new Date();
 const currentDay = currentDate.toLocaleString('en-US', { weekday: 'long' });
+const currentTimeHours = currentDate.getHours();
 
 const daysMap = {
     Sunday: 0,
@@ -14,27 +15,43 @@ const daysMap = {
 let currentDayNum = daysMap[currentDay];
 
 
-function getWeekMondayAndFriday(baseDate) {
-    const day = baseDate.getDay();
-    const diffToMonday = (day === 0 ? -6 : 1) - day;
-    const monday = new Date(baseDate);
-    monday.setDate(baseDate.getDate() + diffToMonday);
+// function getWeekMondayAndFriday(baseDate) {
+//     const day = baseDate.getDay();
+//     const diffToMonday = (day === 0 ? -6 : 1) - day;
+//     const monday = new Date(baseDate);
+//     monday.setDate(baseDate.getDate() + diffToMonday);
 
-    const friday = new Date(monday);
-    friday.setDate(monday.getDate() + 4);
+//     const friday = new Date(monday);
+//     friday.setDate(monday.getDate() + 4);
 
-    const formatDate = (date) =>
-        (date.getMonth() + 1).toString().padStart(2, '0') + '/' +
-        date.getDate().toString().padStart(2, '0');
+//     const formatDate = (date) =>
+//         (date.getMonth() + 1).toString().padStart(2, '0') + '/' +
+//         date.getDate().toString().padStart(2, '0');
 
-    return `${formatDate(monday)} - ${formatDate(friday)}`;
-}
+//     return `${formatDate(monday)} - ${formatDate(friday)}`;
+// }
 
-function updateDisplay() {
-    document.getElementById('weekRange').textContent = getWeekMondayAndFriday(currentDate);
-}
+// function updateDisplay() {
+//     document.getElementById('weekRange').textContent = getWeekMondayAndFriday(currentDate);
+// }
 
-updateDisplay();
+// updateDisplay();
+
+// function formatAMPM(date) {
+//     var hours = date.getHours();
+//     var minutes = date.getMinutes();
+//     var ampm = hours >= 12 ? 'pm' : 'am';
+//     hours = hours % 12;
+//     hours = hours ? hours : 12;
+//     minutes = minutes < 10 ? '0' + minutes : minutes;
+//     var strTime = hours + ':' + minutes + ' ' + ampm;
+//     return strTime;
+// }
+
+
+
+
+
 // -------------------------------------------------------------------
 let total = document.getElementById('total');
 let totalPrice = 0;
@@ -123,6 +140,11 @@ document.querySelector('.order-btn').addEventListener('click', () => {
 
     if (conflict) {
         alert("At least one of the orders is for a day that's already gone!");
+        return;
+    }
+
+    if (8 > currentTimeHours < 16) {
+        alert("Orders are closed at this time!");
         return;
     }
 
