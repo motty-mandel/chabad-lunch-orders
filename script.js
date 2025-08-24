@@ -66,11 +66,13 @@ fetch('./menu.json')
             block.className = 'monday';
 
             block.innerHTML = `
-                <label for="orders" id="day">${item.day}:</label>
+                <div class="data">
+                    <label for="orders" id="day">${item.day}:</label>
+                    <h5 id="menu">${item.foodItems}</h5>
+                </div>
                 <button class="minus">&minus;</button>
                 <input type="text" name="orders" id="orders" placeholder="0">
                 <button class="plus">&plus;</button>
-                <h5 id="menu">${item.foodItems}</h5>
             `;
 
             const minusBtn = block.querySelector('.minus');

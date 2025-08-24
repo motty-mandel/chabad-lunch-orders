@@ -40,7 +40,7 @@ body {
     width: 100%;
 }
 
-.choose-week {
+.description {
     justify-content: space-between;
     align-items: center;
     font-size: 1.2rem;
@@ -119,15 +119,6 @@ body {
 
 .name label {
     margin-right: 20px;
-    flex-basis: 50%;
-}
-
-#name,
-#email {
-    border-radius: 5px;
-    outline: none;
-    border: solid black 2px;
-    background-color: whitesmoke;
     flex-basis: 50%;
 }
 

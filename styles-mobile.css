@@ -2,11 +2,38 @@
     .header h1 {
         font-size: 1.7em;
     }
+
     .main-container {
         width: 90%;
         min-height: fit-content;
     }
 
+    .description {
+        flex-direction: column;
+    }
+
+    .data {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #day {
+        margin: 0;
+    }
+
+    #menu {
+        margin: 0;
+    }
+
+    .plus,
+    .minus {
+        font-size: xx-large;
+    }
+
+    #orders {
+        font-size: xx-large;
+    }
+    
     #requests {
         font-size: 16px;
     }
