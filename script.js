@@ -136,10 +136,10 @@ document.querySelector('.order-btn').addEventListener('click', () => {
         return;
     }
 
-    if (8 < currentTimeHours < 16) {
-        alert("Orders are closed at this time!");
-        return;
-    }
+    // if (8 < currentTimeHours < 16) {
+    //     alert("Orders are closed at this time!");
+    //     return;
+    // }
 
     const conflict = totalItems.some(order => {
         let orderDayNum = daysMap[order.day.trim()];
