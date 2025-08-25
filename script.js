@@ -136,6 +136,11 @@ document.querySelector('.order-btn').addEventListener('click', () => {
         return;
     }
 
+    if (8 < currentTimeHours < 16) {
+        alert("Orders are closed at this time!");
+        return;
+    }
+
     const conflict = totalItems.some(order => {
         let orderDayNum = daysMap[order.day.trim()];
         return orderDayNum < currentDayNum;
@@ -145,11 +150,6 @@ document.querySelector('.order-btn').addEventListener('click', () => {
         alert("At least one of the orders is for a day that's already gone!");
         return;
     }
-
-    // if (8 < currentTimeHours < 16) {
-    //     alert("Orders are closed at this time!");
-    //     return;
-    // }
 
     const specialRequests = document.getElementById('requests').value.trim();
 
