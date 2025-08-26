@@ -1,7 +1,6 @@
 let currentDate = new Date();
 const currentDay = currentDate.toLocaleString('en-US', { weekday: 'long' });
 const currentTimeHours = currentDate.getHours();
-// console.log(currentTimeHours)
 
 const daysMap = {
     Sunday: 0,
@@ -136,10 +135,10 @@ document.querySelector('.order-btn').addEventListener('click', () => {
         return;
     }
 
-    // if (8 < currentTimeHours < 16) {
-    //     alert("Orders are closed at this time!");
-    //     return;
-    // }
+    if (8 < currentTimeHours && currentTimeHours < 16) {
+        alert("Orders are closed at this time!");
+        return;
+    }
 
     const conflict = totalItems.some(order => {
         let orderDayNum = daysMap[order.day.trim()];
