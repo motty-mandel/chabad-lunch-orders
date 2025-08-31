@@ -128,6 +128,7 @@ function updateTotal() {
     total.textContent = `Total: $${totalPrice}`;
 }
 // -------------------------------------------------------
+const disclaimer = document.querySelector('.disclaimer');
 
 document.querySelector('.order-btn').addEventListener('click', () => {
     if (totalItems.length === 0) {
@@ -147,6 +148,11 @@ document.querySelector('.order-btn').addEventListener('click', () => {
 
     if (conflict) {
         alert("At least one of the orders is for a day that's already gone!");
+        return;
+    }
+
+    if (disclaimer.value == undefined) {
+        alert("Please add the child's name and school");
         return;
     }
 

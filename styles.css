@@ -144,6 +144,10 @@ body {
     margin-bottom: 20px;
 }
 
+.disclaimer {
+    font-size: 15px;
+}
+
 .totalPrice {
     justify-content: space-between;
     align-items: center;
