@@ -151,10 +151,10 @@ document.querySelector('.order-btn').addEventListener('click', () => {
         return;
     }
 
-    if (disclaimer.value == undefined) {
-        alert("Please add the child's name and school");
-        return;
-    }
+    // if (disclaimer.value == undefined) {
+    //     alert("Please add the child's name and school");
+    //     return;
+    // }
 
     const specialRequests = document.getElementById('requests').value.trim();
 
