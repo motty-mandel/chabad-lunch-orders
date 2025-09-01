@@ -136,7 +136,7 @@ document.querySelector('.order-btn').addEventListener('click', () => {
         return;
     }
 
-    if (8 < currentTimeHours && currentTimeHours < 16) {
+    if (8 < currentTimeHours && currentTimeHours < 15) {
         alert("Orders are closed at this time!");
         return;
     }
