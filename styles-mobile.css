@@ -3,6 +3,10 @@
         font-size: 1.7em;
     }
 
+    .info {
+        width: 90%;
+    }
+
     .main-container {
         width: 90%;
         min-height: fit-content;
