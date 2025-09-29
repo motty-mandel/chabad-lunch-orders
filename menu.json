@@ -11,24 +11,9 @@
             "day": "Tuesday",
             "foodItems": "Beef meatball with rice",
             "price": "$8"
-        },
-        {
-            "id": "3",
-            "day": "Wednesday",
-            "foodItems": "Hamburger with fries",
-            "price": "$8"
-        },
-        {
-            "id": "4",
-            "day": "Thursday",
-            "foodItems": "Chicken nuggets with fries",
-            "price": "$8"
-        },
-        {
-            "id": "5",
-            "day": "Friday",
-            "foodItems": "Shnitzel with pasta and red sauce",
-            "price": "$8"
         }
     ]
 }
+
+
+
