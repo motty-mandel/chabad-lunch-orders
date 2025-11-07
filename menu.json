@@ -9,7 +9,7 @@
         {
             "id": "2",
             "day": "Tuesday",
-            "foodItems": "Beef meatball with rice",
+            "foodItems": "Chicken nuggets with fries",
             "price": "$8"
         },
         {
@@ -21,7 +21,7 @@
         {
             "id": "4",
             "day": "Thursday",
-            "foodItems": "Chicken nuggets with fries",
+            "foodItems": "Beef meatballs with rice",
             "price": "$8"
         },
         {
