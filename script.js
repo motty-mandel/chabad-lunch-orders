@@ -136,24 +136,24 @@ document.querySelector('.order-btn').addEventListener('click', () => {
         return;
     }
 
-    // if (8 < currentTimeHours && currentTimeHours < 15) {
-    //     alert("Orders are closed at this time!");
-    //     return;
-    // }
+     if (8 < currentTimeHours && currentTimeHours < 15) {
+         alert("Orders are closed at this time!");
+         return;
+     }
 
-    // const conflict = totalItems.some(order => {
-    //     let orderDayNum = daysMap[order.day.trim()];
-    //     return orderDayNum < currentDayNum;
-    // });
+     const conflict = totalItems.some(order => {
+         let orderDayNum = daysMap[order.day.trim()];
+         return orderDayNum < currentDayNum;
+     });
 
-    // if (conflict) {
-    //     alert("At least one of the orders is for a day that's already gone!");
-    //     return;
-    // }
+     if (conflict) {
+         alert("At least one of the orders is for a day that's already gone!");
+         return;
+     }
 
     // if (disclaimer.value == undefined) {
-    //     alert("Please add the child's name and school");
-    //     return;
+         //alert("Please add the child's name and school");
+         //return;
     // }
 
     const specialRequests = document.getElementById('requests').value.trim();
