@@ -152,11 +152,6 @@ document.querySelector('.order-btn').addEventListener('click', () => {
         return;
     }
 
-    if (requests.value !== undefined) {
-        alert("Please add the child's name!");
-        return;
-    }
-
     const specialRequests = document.getElementById('requests').value.trim();
 
     fetch('https://chabad-lunch-orders.onrender.com/create-checkout-session', {
