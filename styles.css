@@ -136,6 +136,7 @@ body {
     border: 2px solid #d0d4da;
     background-color: #f3f4f6;
     box-shadow: inset -3px -3px #f7f7f9, inset 3px 3px #8b8c8f;
+    touch-action: manipulation;
 }
 
 .plus:active,
