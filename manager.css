@@ -1,0 +1,39 @@
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 95%;
+    font-family: MS Sans Serif, Tahoma, Verdana, Segoe UI, sans-serif;
+    box-shadow: inset -3px -3px #f7f7f9, inset 3px 3px #8b8c8f;
+    padding: 10px;
+}
+
+.actions .closed {
+    box-shadow: inset -3px -3px #f7f7f9, inset 3px 3px #8b8c8f;
+    background-color: #e0e0e0;
+    padding: 10px;
+}
+
+.close-orders-btn,
+.open-orders-btn {
+    max-height: fit-content;
+    padding: 20px 20px 20px 20px;
+    line-height: 1rem;
+    font-size: large;
+    border: 2px solid #d0d4da;
+    background-color: #d1d5dc;
+    box-shadow: inset -3px -3px #f7f7f9, inset 3px 3px #8b8c8f;
+    font-family: MS Sans Serif, Tahoma, Verdana, Segoe UI, sans-serif;
+}
+
+.close-orders-btn.active,
+.open-orders-btn.active {
+    background-color: #193cb8;
+}
+
+.menu {
+    box-shadow: inset -3px -3px #f7f7f9, inset 3px 3px #8b8c8f;
+    background-color: #e0e0e0;
+    padding: 10px;
+}

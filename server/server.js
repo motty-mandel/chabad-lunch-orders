@@ -2,11 +2,14 @@ require('dotenv').config();
 const express = require('express');
 const Stripe = require('stripe');
 const cors = require('cors');
+const fs = require('fs');
+const path = require('path');
 const sendOrderEmail = require('./email');
 const app = express();
 const stripe = Stripe(process.env.SECRET_KEY);
 
 app.use(cors());
+app.use(express.json());
 
 // Webhook to send email after successful payment
 app.post('/webhook', express.raw({ type: 'application/json' }), (req, res) => {
@@ -38,8 +41,27 @@ app.post('/webhook', express.raw({ type: 'application/json' }), (req, res) => {
   res.status(200).end();
 });
 
-
-app.use(express.json());
+// Update menu item
+app.post('/update-menu.json', (req, res) => {
+  const { id, foodItems } = req.body;
+  const menuPath = path.join(__dirname, '../menu.json');
+  
+  try {
+    const menuData = JSON.parse(fs.readFileSync(menuPath, 'utf8'));
+    const itemIndex = menuData.menuItems.findIndex(item => item.id === id);
+    
+    if (itemIndex !== -1) {
+      menuData.menuItems[itemIndex].foodItems = foodItems;
+      fs.writeFileSync(menuPath, JSON.stringify(menuData, null, 4));
+      res.json({ success: true });
+    } else {
+      res.status(404).json({ success: false });
+    }
+  } catch (err) {
+    console.error('Error updating menu:', err);
+    res.status(500).json({ success: false });
+  }
+});
 
 // Create Checkout session
 app.post('/create-checkout-session', async (req, res) => {
