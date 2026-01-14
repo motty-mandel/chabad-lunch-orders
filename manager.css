@@ -33,7 +33,21 @@
 }
 
 .menu {
+    display: flex;
+    width: auto;
+    flex-wrap: wrap;
+    flex-basis: 50%;
     box-shadow: inset -3px -3px #f7f7f9, inset 3px 3px #8b8c8f;
     background-color: #e0e0e0;
     padding: 10px;
+}
+
+.menu-item {
+    width: 50%;
+}
+
+.editable-food {
+    box-shadow: inset -3px -3px #f7f7f9, inset 3px 3px #8b8c8f;
+    padding: 5px;
+    outline: none;
 }

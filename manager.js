@@ -35,7 +35,7 @@ fetch('./menu.json')
                 <button class="save-btn" data-id="${item.id}">Save</button>
             </div>
         `).join('');
-        
+
         document.querySelectorAll('.save-btn').forEach(btn => {
             btn.addEventListener('click', saveFoodItems);
         });
@@ -44,18 +44,18 @@ fetch('./menu.json')
 function saveFoodItems(e) {
     const itemId = e.target.dataset.id;
     const foodText = document.querySelector(`.editable-food[data-id="${itemId}"]`).innerText;
-    
+
     fetch('http://localhost:4242/update-menu.json', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id: itemId, foodItems: foodText })
     })
-    .then(res => res.json())
-    .then(data => {
-        if (data.success) alert('Saved!');
-        else alert('Error saving');
-    })
-    .catch(err => console.error(err));
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) alert('Saved!');
+            else alert('Error saving');
+        })
+        .catch(err => console.error(err));
 }
 
 // Run on page load

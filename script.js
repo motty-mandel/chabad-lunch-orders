@@ -70,7 +70,7 @@ fetch('./menu.json')
                     <h5 id="menu">${item.foodItems}</h5>
                 </div>
                 <button class="minus">&minus;</button>
-                <input type="text" name="orders" id="orders" placeholder="0">
+                <input type="text" name="orders" id="orders" placeholder="0" readonly>
                 <button class="plus">&plus;</button>
             `;
 
@@ -129,7 +129,6 @@ function updateTotal() {
 }
 // -------------------------------------------------------
 const disclaimer = document.getElementById(requests);
-console.log(requests.value);
 
 document.querySelector('.order-btn').addEventListener('click', () => {
     if (totalItems.length === 0) {
