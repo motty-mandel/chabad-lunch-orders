@@ -51,7 +51,6 @@ function saveFoodItems(e) {
         body: JSON.stringify({ id: itemId, foodItems: foodText })
     })
         .then(res => res.json())
-        .then(console.log(data));
         .then(data => {
             if (data.success) alert('Saved!');
             else alert('Error saving');
