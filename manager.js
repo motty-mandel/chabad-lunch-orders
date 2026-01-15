@@ -45,7 +45,7 @@ function saveFoodItems(e) {
     const itemId = e.target.dataset.id;
     const foodText = document.querySelector(`.editable-food[data-id="${itemId}"]`).innerText;
 
-    fetch('http://localhost:4242/update-menu.json', {
+    fetch('https://chabad-lunch-orders.onrender.com//update-menu.json', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id: itemId, foodItems: foodText })
