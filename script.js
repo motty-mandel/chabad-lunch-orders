@@ -18,7 +18,7 @@ let total = document.getElementById('total');
 let totalPrice = 0;
 let totalItems = [];
 
-fetch('./menu.json')
+fetch('https://chabad-lunch-orders.onrender.com/menu.json')
     .then(response => response.json())
     .then(data => {
         data.menuItems.forEach(item => {
