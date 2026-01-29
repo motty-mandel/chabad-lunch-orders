@@ -1,0 +1,37 @@
+{
+    "short_name": "Hot Lunches",
+    "name": "Israeli Chabad SA school lunches",
+    "icons": [
+        {
+            "src": "favicon192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "favicon512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "id": "/?source=pwa",
+    "start_url": "./index.html",
+    "scope": "./",
+    "background_color": "#3367D6",
+    "display": "fullscreen",
+    "theme_color": "#FFFFFF",
+    "description": "A menu for parents and teachers to order a hot lunch for their children or themselves.",
+    "screenshots": [
+        {
+            "src": "home-tall-lunches.png",
+            "type": "image/png",
+            "sizes": "546x889",
+            "form_factor": "narrow"
+        },
+        {
+            "src": "home-wide-lunches.png",
+            "type": "image/png",
+            "sizes": "1901x987",
+            "form_factor": "wide"
+        }
+    ]
+}
