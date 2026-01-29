@@ -1,6 +1,8 @@
 let currentDate = new Date();
 const currentDay = currentDate.toLocaleString('en-US', { weekday: 'long' });
 const currentTimeHours = currentDate.getHours();
+const updatePSA = document.querySelector('.temp-update');
+document.querySelector('.temp-update h3').addEventListener('click', closeUpdate);
 
 const daysMap = {
     Sunday: 0,
@@ -126,7 +128,19 @@ document.querySelector('.order-btn').addEventListener('click', () => {
         .catch(err => console.error("Error:", err));
 });
 
+function update() {
+    const firstTimeCheck = localStorage.getItem('firstTime');
+    if (!firstTimeCheck) {
+        updatePSA.style.display = 'flex';
+        localStorage.setItem('firstTime', 'been here');
+    }
+};
 
+function closeUpdate() {
+    updatePSA.style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', update);
 
 // function getWeekMondayAndFriday(baseDate) {
 //     const day = baseDate.getDay();

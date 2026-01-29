@@ -20,7 +20,7 @@ body {
     width: 100%;
     color: white;
     background-color: #193cb8;
-    box-shadow:  inset -3px -3px #0a7de2, inset 3px 3px #05275d;
+    box-shadow: inset -3px -3px #0a7de2, inset 3px 3px #05275d;
 }
 
 .header-left {
@@ -142,7 +142,7 @@ body {
 .plus:active,
 .minus:active {
     background-color: #99a1af;
-} 
+}
 
 #orders {
     cursor: default;
@@ -216,7 +216,7 @@ body {
 .totalPrice button:hover {
     background-color: #99a1af;
 }
- 
+
 .footer {
     display: flex;
     align-items: center;
@@ -224,7 +224,7 @@ body {
     width: 100%;
     color: white;
     background-color: #193cb8;
-    box-shadow:  inset -3px -3px #0a7de2, inset 3px 3px #05275d;
+    box-shadow: inset -3px -3px #0a7de2, inset 3px 3px #05275d;
 }
 
 .footer h4 {
@@ -236,4 +236,28 @@ body {
 .yom-tov {
     display: none;
     text-align: center;
+}
+
+/* --------------------------------------PWA----------------------------------------------- */
+
+.temp-update {
+    color: white;
+    padding: 10px;
+    box-shadow: inset -3px -3px #0a7de2, inset 3px 3px #05275d;
+    width: 300px;
+    position: absolute;
+    background-color: #193cb8;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.temp-update h3:first-of-type {
+    position: absolute;
+    top: 5px;
+    left: 93%;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
 }
