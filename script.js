@@ -143,6 +143,9 @@ function closeUpdate() {
 
 function updateParsha() {
     let parshaValue = localStorage.getItem('newParsha');
+    if (parshaValue === null || parshaValue === undefined) {
+        parsha.innerHTML = "Parshat Yitro";
+    }
     parsha.innerHTML = `Parshat ${parshaValue}`;
 }
 
