@@ -51,3 +51,19 @@
     padding: 5px;
     outline: none;
 }
+
+.parsha {
+    display: flex;
+    flex-direction: column;
+    font-family: MS Sans Serif, Tahoma, Verdana, Segoe UI, sans-serif;
+    box-shadow: inset -3px -3px #f7f7f9, inset 3px 3px #8b8c8f;
+    padding: 10px;
+}
+
+.parsha button {
+    font-size: large;
+    border: 2px solid #d0d4da;
+    background-color: #d1d5dc;
+    box-shadow: inset -3px -3px #f7f7f9, inset 3px 3px #8b8c8f;
+    font-family: MS Sans Serif, Tahoma, Verdana, Segoe UI, sans-serif;
+}

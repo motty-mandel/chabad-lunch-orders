@@ -1,6 +1,8 @@
 const closeOrdersBtn = document.querySelector('.close-orders-btn');
 const openOrdersBtn = document.querySelector('.open-orders-btn');
 const manageMenu = document.querySelector('.menu');
+const parshaBtn = document.getElementById('parsha-button');
+const newParsha = document.getElementById('new-parsha');
 
 function closeOrders() {
     closeOrdersBtn.classList.add('active');
@@ -57,6 +59,12 @@ function saveFoodItems(e) {
         })
         .catch(err => console.error(err));
 }
+
+parshaBtn.addEventListener('click', function() {
+    let newParshaValue = newParsha.value;
+    localStorage.setItem('newParsha', newParshaValue);
+})
+
 
 // Run on page load
 document.addEventListener('DOMContentLoaded', restoreButtonState);

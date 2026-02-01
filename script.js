@@ -2,6 +2,7 @@ let currentDate = new Date();
 const currentDay = currentDate.toLocaleString('en-US', { weekday: 'long' });
 const currentTimeHours = currentDate.getHours();
 const updatePSA = document.querySelector('.temp-update');
+const parsha = document.getElementById('parsha');
 document.querySelector('.temp-update h3').addEventListener('click', closeUpdate);
 
 const daysMap = {
@@ -138,9 +139,16 @@ function update() {
 
 function closeUpdate() {
     updatePSA.style.display = 'none';
+};
+
+function updateParsha() {
+    let parshaValue = localStorage.getItem('newParsha');
+    parsha.innerHTML = `Parshat ${parshaValue}`;
 }
 
 document.addEventListener('DOMContentLoaded', update);
+// document.addEventListener('DOMContentLoaded', updateParsha);
+
 
 // function getWeekMondayAndFriday(baseDate) {
 //     const day = baseDate.getDay();
