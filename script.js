@@ -147,7 +147,7 @@ function updateParsha() {
 }
 
 document.addEventListener('DOMContentLoaded', update);
-// document.addEventListener('DOMContentLoaded', updateParsha);
+document.addEventListener('DOMContentLoaded', updateParsha);
 
 
 // function getWeekMondayAndFriday(baseDate) {
