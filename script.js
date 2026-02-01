@@ -141,16 +141,16 @@ function closeUpdate() {
     updatePSA.style.display = 'none';
 };
 
-function updateParsha() {
-    let parshaValue = localStorage.getItem('newParsha');
-    if (parshaValue === null || parshaValue === undefined) {
-        parsha.innerHTML = "Parshat Yitro";
-    }
-    parsha.innerHTML = `Parshat ${parshaValue}`;
-}
+// function updateParsha() {
+//     let parshaValue = localStorage.getItem('newParsha');
+//     if (parshaValue === null || parshaValue === undefined) {
+//         parsha.innerHTML = "Parshat Yitro";
+//     }
+//     parsha.innerHTML = `Parshat ${parshaValue}`;
+// }
 
 document.addEventListener('DOMContentLoaded', update);
-document.addEventListener('DOMContentLoaded', updateParsha);
+// document.addEventListener('DOMContentLoaded', updateParsha);
 
 
 // function getWeekMondayAndFriday(baseDate) {
